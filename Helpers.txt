@@ -1,0 +1,12 @@
+To do build and start
+$docker build -t traptest .;docker run -it traptest
+
+To stop app
+$docker stop $(docker ps -q --filter ancestor=traptest )
+
+To attach to running container
+$docker exec -it $(docker ps -q --filter ancestor=traptest ) /bin/bash 
+
+To send kill with specific value
+$docker kill --signal="SIGTERM" $(docker ps -q --filter ancestor=traptest)
+
